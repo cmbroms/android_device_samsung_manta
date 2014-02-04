@@ -39,6 +39,11 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 TARGET_KERNEL_CONFIG := cyanogenmod_manta_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
 
+# Boot/Recovery image settings
+BOARD_KERNEL_CMDLINE := androidboot.selinux=permissive
+BOARD_KERNEL_BASE := 0x30000000
+BOARD_KERNEL_PAGESIZE := 4096
+
 #Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
