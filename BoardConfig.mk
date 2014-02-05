@@ -39,6 +39,9 @@ TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
 TARGET_KERNEL_CONFIG := cyanogenmod_manta_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/manta
 
+# Enable various prefetch optimizations 
+COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64 
+
 #Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
