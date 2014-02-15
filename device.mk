@@ -182,10 +182,6 @@ $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-he
 PRODUCT_PROPERTY_OVERRIDES += \
     media.aac_51_output_enabled=true
 
-# Required For Boot DO NOT DELETE!
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.dexopt-data-only=1
-
 # set default USB configuration
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp
@@ -198,12 +194,5 @@ PRODUCT_PACKAGES += \
 $(call inherit-product-if-exists, hardware/samsung_slsi/exynos5/exynos5.mk)
 $(call inherit-product-if-exists, vendor/samsung_slsi/exynos5/exynos5-vendor.mk)
 $(call inherit-product-if-exists, vendor/samsung/manta/device-vendor.mk)
-$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4324/device-bcm.mk)
 
-PRODUCT_PROPERTY_OVERRIDES += \
-    dalvik.vm.heapsize=512m \
-    dalvik.vm.heapmaxfree=8m \
-    dalvik.vm.heapminfree=512k \
-    dalvik.vm.heapstartsize=32m \
-    dalvik.vm.heapgrowthlimit=256m \
-    dalvik.vm.heaputilization=0.75
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4324/device-bcm.mk)
